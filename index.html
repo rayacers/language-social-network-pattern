@@ -41,10 +41,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase ml-auto">
-      <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#abstract">Abstract</a></li>
-		  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#language-analysis">Language Analysis</a></li>
-		  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#cluster-analysis">Cluster Analysis</a></li>
-		  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#prediction">Language Prediction</a></li>
+      <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#overview">Overview</a></li>
+		  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#activeness-analysis">Activeness Analysis</a></li>
+		  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#community-behavior">Community behavior</a></li>
+		  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#following-preference">Following Preference</a></li>
+		  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#recap">Recap</a></li>
 		  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://github.com/epfl-ada/ada-2020-project-milestone-p3-p3_indita" target="_blank">Report</a></li>
 		  
           </li>
@@ -58,29 +59,72 @@
   <header class="masthead">
     <div class="container">
       <div class="intro-text"><div class="intro-heading">Languages Influence Social Network Patterns: A Case Study</div>
-      <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#abstract">Learn More</a></div>
+      <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#overview">Learn More</a></div>
     </div>
   </header>
   <!-- End Header -->
 
 <!-- Abstract -->
-  <section class="bg-light page-section" id="abstract">
+  <section class="bg-light page-section" id="overview">
     <div class="container">
 	
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Abstract</h2>
+          <h2 class="section-heading text-uppercase">Overview</h2>
           
-          <p>In this project, we would like to play with the language feature from the original dataset. 
+          <h3 class="section-subheading">Introduction</h3>
+          
+          <p>In this project, we would like to play with the language feature from a Twitter dataset. 
             There has always been a stereotype that western people are more active on social media than 
             eastern people. To verify such trends, we propose to analyze the features’ distribution of 
             different language users. We can decide a user's activeness from some features such as tweet 
-            counts, friend numbers etc. Moreover, we would like to learn if language clusters exist on 
-            Twitter. If so, we want to learn to what extent they are going to interact with different 
-            clusters. In order to do so, we would run the community algorithm provided by networkx modules 
-            and see if we can detect the clusters of different language groups. In the end, we could apply 
-            machine learning to see if we can predict the language of a user based on the features of 
-            his/her own Twitter profile and that of the follower-followee network.</p>
+            counts, friend numbers etc.
+
+            Besides, we would like to know if users in different cultures (western and eastern) have different
+             using behaviors. In order to do so, we collect tweets and active users by hours and days and
+             generate an active time figure.
+            
+            Moreover, we would like to learn if user in different languages 
+            have different following preference. If so, we want to learn to what extent they are going to
+            interact with different clusters.
+            
+            In the end, we could apply machine learning to see if we can 
+            predict the language of a user based on the features of his/her own Twitter profile and that 
+            of the follower-followee network.</p>
+          
+
+          <h3 class="section-subheading">Language Code Table</h3>
+
+          <table style="width:100%" border="1px">
+            <tr>
+              <th>de</th>
+              <th>ko</th>
+              <th>it</th>
+              <th>ru</th>
+              <th>fr</th>
+              <th>tr</th>
+              <th>id</th>
+              <th>ar</th>
+              <th>pt</th>
+              <th>ja</th>
+              <th>es</th>
+              <th>en</th>
+            </tr>
+            <tr>
+              <th>Germany</th>
+              <th>Korean</th>
+              <th>Italian</th>
+              <th>Russian</th>
+              <th>Franch</th>
+              <th>Turkish</th>
+              <th>Indonesian</th>
+              <th>Arabic</th>
+              <th>Portuguese</th>
+              <th>Japanese</th>
+              <th>Spanish</th>
+              <th>English</th>
+            </tr>
+          </table>
 		  
         </div>
       </div>
@@ -89,42 +133,128 @@
   </section>
 <!-- End Abstract -->
 <!-- Language Analysis -->
-<section class="bg-light page-section" id="language-analysis">
+<section class="page-section" id="activeness-analysis">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h2 class="section-heading text-uppercase">Language Analysis</h2>
-        <h3 class="section-subheading text-muted">subsection</h3>
+        <h2 class="section-heading text-uppercase">Activeness Analysis</h2>
+        <h3 class="section-subheading">An overview of the dataset</h3>
+        
+        <div class="box">
+          <button class="btn btn-primary js-scroll-trigger" onclick="getElementById('figure_1').src='static/img/community_size_all.jpg'">All Languages</button>
+          <button class="btn btn-primary js-scroll-trigger" onclick="getElementById('figure_1').src='static/img/community_size_west.jpg'">Western Languages</button>
+          <button class="btn btn-primary js-scroll-trigger" onclick="getElementById('figure_1').src='static/img/community_size_east.jpg'">Eastern Languages</button>
+        </div>
+
+        <div class="box">
+          <img src='static/img/community_size_all.jpg' width="100%" height="auto" id="figure_1">
+        </div>
+
+        <h3 class="section-subheading">Who is more popular?</h3>
+
+        <div class="box">
+          <button class="btn btn-primary js-scroll-trigger" onclick="getElementById('figure_2').src='static/img/popularity_statistics_boxplot.jpg'">Boxplot</button>
+          <button class="btn btn-primary js-scroll-trigger" onclick="getElementById('figure_2').src='static/img/popularity_statistics_barplot.jpg'">Barplot</button>
+        </div>
+
+        <div class="box">
+          <img src='static/img/popularity_statistics_boxplot.jpg' width="100%" height="auto" id="figure_2">
+        </div>
+
+        <div class="box">
+          <img src='static/img/culture_popularity_boxplot.jpg' width="100%" height="auto">
+        </div>
+
+        <h3 class="section-subheading">Who is more active?</h3>
+
+        <div class="box">
+          <button class="btn btn-primary js-scroll-trigger" onclick="getElementById('figure_3').src='static/img/activeness_statistics_boxplot.jpg'">Boxplot</button>
+          <button class="btn btn-primary js-scroll-trigger" onclick="getElementById('figure_3').src='static/img/activeness_statistics_barplot.jpg'">Barplot</button>
+        </div>
+
+        <div class="box">
+          <img src='static/img/activeness_statistics_boxplot.jpg' width="100%" height="auto" id="figure_3">
+        </div>
+
+        <div class="box">
+          <img src='static/img/culture_activeness_boxplot.jpg' width="100%" height="auto">
+        </div>
+
+
       </div>
     </div>
   </div>
 </section>
 <!-- End langauge-analysis -->
 <!-- cluster-analysis -->
-  <section class="bg-light page-section" id="cluster-analysis">
+  <section class="page-section" id="community-behavior">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Cluster Analysis</h2>
-          <h3 class="section-subheading text-muted">subsection</h3>
+          <h2 class="section-heading text-uppercase">Community behavior Analysis</h2>
+
+          <h3 class="section-subheading">Do both western and eastern culture follow 80-20 rules?</h3>
+          
+          <div class="box">
+            <img src='static/img/tweets_per_user_distribution.jpg' width="100%" height="auto" id="figure_4">
+          </div>
+
+          <h3 class="section-subheading">Do western and eastern culture have different active time on twitter?</h3>
+          
+          <div class="box">
+            <img src='static/img/active_time.jpg' width="100%" height="auto" id="figure_4">
+          </div>
+
         </div>
       </div>
     </div>
   </section>
 <!-- End cluster analysis -->
 <!-- prediction -->
-<section class="bg-light page-section" id="prediction">
+<section class="page-section" id="following-preference">
 <div class="container">
   <div class="row">
 	<div class="col-lg-12 text-center">
-	  <h2 class="section-heading text-uppercase">Language Prediction</h2>
-	  <h3 class="section-subheading text-muted">subsection</h3>
+    <h2 class="section-heading text-uppercase">Following Preference</h2>
+    
+    <h3 class="section-subheading">Do users in different languages have specific following preference?</h3>
+
+    <div class="box">
+      <button class="btn btn-primary js-scroll-trigger" onclick="getElementById('figure_5').src='static/img/language_following/de.jpg'">de</button>
+      <button class="btn btn-primary js-scroll-trigger" onclick="getElementById('figure_5').src='static/img/language_following/ko.jpg'">ko</button>
+      <button class="btn btn-primary js-scroll-trigger" onclick="getElementById('figure_5').src='static/img/language_following/it.jpg'">it</button>
+      <button class="btn btn-primary js-scroll-trigger" onclick="getElementById('figure_5').src='static/img/language_following/ru.jpg'">ru</button>
+      <button class="btn btn-primary js-scroll-trigger" onclick="getElementById('figure_5').src='static/img/language_following/fr.jpg'">fr</button>
+      <button class="btn btn-primary js-scroll-trigger" onclick="getElementById('figure_5').src='static/img/language_following/tr.jpg'">tr</button>
+      <button class="btn btn-primary js-scroll-trigger" onclick="getElementById('figure_5').src='static/img/language_following/id.jpg'">id</button>
+      <button class="btn btn-primary js-scroll-trigger" onclick="getElementById('figure_5').src='static/img/language_following/ar.jpg'">ar</button>
+      <button class="btn btn-primary js-scroll-trigger" onclick="getElementById('figure_5').src='static/img/language_following/pt.jpg'">pt</button>
+      <button class="btn btn-primary js-scroll-trigger" onclick="getElementById('figure_5').src='static/img/language_following/ja.jpg'">ja</button>
+      <button class="btn btn-primary js-scroll-trigger" onclick="getElementById('figure_5').src='static/img/language_following/es.jpg'">es</button>
+      <button class="btn btn-primary js-scroll-trigger" onclick="getElementById('figure_5').src='static/img/language_following/en.jpg'">en</button>
+    </div>
+
+    <div class="box">
+      <img src='static/img/language_following/de.jpg' width="100%" height="auto" id="figure_5">
+    </div>
 	</div>
   </div>
   
 </div>
 </section>
 <!-- end prediction -->
+
+<section class="page-section" id="recap">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">Recap</h2>
+
+
+      </div>
+    </div>
+  </div>
+</section>
 
 	    <!-- Footer -->
   <footer class="footer">
