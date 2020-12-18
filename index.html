@@ -371,13 +371,19 @@
     <h2 class="section-heading text-uppercase">Language Prediction</h2>
 		
     				<p>Can we predict the culture of a user, given his/her total activity on Tweeter (without access on his/her content)?
-Let's try to solve this problem in a supervised and unspervised way using all the features analyzed in Activitness Analysis session:
-- number of followers, 
-					- number of friend, 
-					- number of tweets, 
-					- Internationality, 
-					- Average daily tweets, 
-					- year</p>
+Let's try to solve this problem in a supervised and unspervised way using all the features analyzed in Activitness Analysis session: </p>
+<p>- number of followers, </p>
+					<p>- number of friend, </p>
+		<p>- number of tweets, </p>
+		<p>- Internationality, </p>
+		<p>-- Average daily tweets,</p>
+		<p>- year..</p>
+		
+					
+					
+					
+					
+					
 
 					<h3 class="supevised-learning">Supevised Learning</h3>
 <p>In a Supervised framework we split the dataset in 2 parts: we train our model with 70% of the users and we use 30% for testing our performances. We standardize the dataset but further analysis show that a polynomial expansion don't seem to improve our prediction performances. Using Logistic Regression and Random Forest we got an accuracy on the test up to 82\%.
@@ -428,14 +434,14 @@ The 6 coefficient of the Logistic regression describe us the importance of each 
           his/her own Twitter profile?
         </h3>
 	
-	 	<p> Yes, in a supervised way with an accuracy of 0.82; not at all in a unsupervised way. So what does it mean?
+	 	<p> Yes, in a supervised way with an accuracy of 0.82; not at all in a unsupervised way. So what does it mean?</p>
 
-IT REMEMBERS US THAT MACHINE LEARNING IS NOT MAGIC.
+<p>IT REMEMBERS US THAT MACHINE LEARNING IS NOT MAGIC.</p>
 
-We can't predict patterns that don'exist and, similiarly, there are patterns that can't be explained without the right data. The 6 features that we analyzed through this report well explain the different cultural attitudes on Tweeter, and in a certain way allow us the infer the culture with a certain accuracy in a supervised way training. However, all the variance is not explained and we are not at all able to solve this problem with a unsupervised way. This let us refl if this cultural differences are really predictable.
+<p>We can't predict patterns that don'exist and, similiarly, there are patterns that can't be explained without the right data. The 6 features that we analyzed through this report well explain the different cultural attitudes on Tweeter, and in a certain way allow us the infer the culture with a certain accuracy in a supervised way training. However, all the variance is not explained and we are not at all able to solve this problem with a unsupervised way. This let us refl if this cultural differences are really predictable.</p>
 
-It is intersting to point out these results, because this problem is not so different from the judgments we make every day scrolling the feed on a social network. Are we using the right (enough and representative) data and should be able to profilize each user? Do these personalities really reflect the reality on the test set? 
-Maybe there are better dataset to work with. See `REAL LIFE.csv`.
+<p>It is intersting to point out these results, because this problem is not so different from the judgments we make every day scrolling the feed on a social network. Are we using the right (enough and representative) data and should be able to profilize each user? Do these personalities really reflect the reality on the test set? 
+Maybe there are better dataset to work with. See `REAL_LIFE.csv`.
         	</p>
 	      
 
