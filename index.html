@@ -42,7 +42,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase ml-auto">
       <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#overview">Overview</a></li>
-		  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#activeness-analysis">Activeness Analysis</a></li>
+		  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#feature-analysis">Features Analysis</a></li>
 		  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#using-behavior">Using Behavior</a></li>
 		  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#language-prediction">Language Prediction</a></li>
 		  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#conclusion">Conclusion</a></li>
@@ -84,8 +84,8 @@
 		  Further, we categorize the users based upon their language into two broad groups - Western and Eastern. The data analysis 
 		  is mostly based on comparing and describing the notable differences between these groups.
 		  
-		  We also try to confirm the behavior analysis provided in our reference paper 
-		  [ADD LINK: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0134270] and we replicate two propositions, 
+		  We also try to confirm the behavior analysis provided in our 
+		  <a href = "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0134270">reference paper </a> and we replicate two propositions, 
 		  namely the 80-20 Rule and the Circadian Rhythms, but this time, we consider only one category (Western vs Eastern) at a time. 
 		  We also check the preference in following other users among users of different languages.
 		  
@@ -102,7 +102,7 @@
 		It includes Twitter profile data for each user, egos and alters, which includes the followers counts, friends counts, 
 		statuses counts, and language used by the user.</p>
 
-          <p><b>EgoNetwork</b>: This dataset contains the 'following' relationship on Twitter between the egos and alters. 
+          <p><b>EgoNetwork</b>: This dataset contains the <b>following</b> relationship on Twitter between the egos and alters. 
 		There are over 4,000,000 following networks in this dataset.</p>
           
           <p>Note that the dataset only contains ego-alter following relationship but not ego-ego and
@@ -170,7 +170,7 @@
   </section>
 <!-- End Abstract -->
 <!-- Language Analysis -->
-<section class="page-section" id="activeness-analysis">
+<section class="page-section" id="feature-analysis">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
@@ -220,6 +220,8 @@
         <p>3. The maximum average number of friends belong to Arabic.</p>
         <p>4. The minimum average number of friends belong to Korean.</p>
 
+        <p>Arabic language users are quite popular online, while korean language users tend to have less online presence.</p>
+
         <p>Switching to a cultural perspective, do the users from the western culture really have higher popularity than 
 	  users from eastern culture on Twitter? To answer this question, we group the data by culture according to the 
           languages spoken in both regions.</p>
@@ -254,6 +256,9 @@
         <p>2. The minimum average number of statuses belong to Germany</p>
         <p>3. The maximum average number of daily tweets belong Japanese.</p>
         <p>4. The minimum average number of daily tweets belong to Germany</p>
+
+        <p>Japanese language users spend more time on Twitter, while Germany language users tend to be 
+          less active online.</p>
 
         <p>We also analyze it from a cultural perspective:</p>
 
@@ -372,24 +377,18 @@
 		
     				<p>Can we predict the culture of a user, given his/her total activity on Tweeter (without access on his/her content)?
 Let's try to solve this problem in a supervised and unspervised way using all the features analyzed in Activitness Analysis session: </p>
-<p>- number of followers, </p>
-					<p>- number of friend, </p>
+    <p>- number of followers, </p>
+		<p>- number of friend, </p>
 		<p>- number of tweets, </p>
 		<p>- Internationality, </p>
-		<p>-- Average daily tweets,</p>
+		<p>- Average daily tweets,</p>
 		<p>- year..</p>
-		
-					
-					
-					
-					
-					
 
 					<h3 class="supevised-learning">Supevised Learning</h3>
-<p>In a Supervised framework we split the dataset in 2 parts: we train our model with 70% of the users and we use 30% for testing our performances. We standardize the dataset but further analysis show that a polynomial expansion don't seem to improve our prediction performances. Using Logistic Regression and Random Forest we got an accuracy on the test up to 82\%.
-The 6 coefficient of the Logistic regression describe us the importance of each regressor, while the t-tests using the coefficients tell us that there is not statical evidence that some feature are useful, i.e. number of folloer and friends and average daily tweets, maybe the last one because it is strong correlated with the total number of tweets published and the year of subscription.
+<p>In a Supervised framework we split the dataset in 2 parts: we train our model with 70% of the users and we use 30% for testing our performances. We standardize the dataset but further analysis show that a polynomial expansion don't seem to improve our prediction performances. Using Logistic Regression and Random Forest we got an accuracy on the test up to 82%.
+The 6 coefficient of the Logistic regression describe us the importance of each regressor, while the t-tests using the coefficients tell us that there is not statical evidence that some feature are useful, i.e. number of follower and friends and average daily tweets, maybe the last one because it is strong correlated with the total number of tweets published and the year of subscription.
  <h3 class="unsupevised-learning">Unsupevised Learning</h3>
-<p>A even challenging problem is to find this 2 behaviors (western and eastern) from scratch, i.e. without a training model. If we are able to cluster the users in this two subset without knowing that they exist, it would mean that they are strong and that exist from real. We applied few variant of k-means (k=2) but without almost any result. In fact, even considering different data reduction (PCA, t-SNE, 2 most representative features) to visualize the sample, it seems that there is not spatial pattern at all to split automaticaly.</p>
+<p>An even challenging problem is to find this 2 behaviors (western and eastern) from scratch, i.e. without a training model. If we are able to cluster the users in this two subset without knowing that they exist, it would mean that they are strong and that exist from real. We applied few variant of k-means (k=2) but without almost any result. In fact, even considering different data reduction (PCA, t-SNE, 2 most representative features) to visualize the sample, it seems that there is not spatial pattern at all to split automaticaly.</p>
 
 
 	</div>
@@ -438,10 +437,10 @@ The 6 coefficient of the Logistic regression describe us the importance of each 
 
 <p>IT REMEMBERS US THAT MACHINE LEARNING IS NOT MAGIC.</p>
 
-<p>We can't predict patterns that don'exist and, similiarly, there are patterns that can't be explained without the right data. The 6 features that we analyzed through this report well explain the different cultural attitudes on Tweeter, and in a certain way allow us the infer the culture with a certain accuracy in a supervised way training. However, all the variance is not explained and we are not at all able to solve this problem with a unsupervised way. This let us refl if this cultural differences are really predictable.</p>
+<p>We can't predict patterns that don't exist and, similiarly, there are patterns that can't be explained without the right data. The 6 features that we analyzed through this report well explain the different cultural attitudes on Tweeter, and in a certain way allow us the infer the culture with a certain accuracy in a supervised way training. However, all the variance is not explained and we are not at all able to solve this problem with a unsupervised way. This let us reflect if this cultural differences are really predictable.</p>
 
 <p>It is intersting to point out these results, because this problem is not so different from the judgments we make every day scrolling the feed on a social network. Are we using the right (enough and representative) data and should be able to profilize each user? Do these personalities really reflect the reality on the test set? 
-Maybe there are better dataset to work with. See `REAL_LIFE.csv`.
+Maybe there are better dataset to work with. See <b>REAL_LIFE.csv</b>.
         	</p>
 	      
 
