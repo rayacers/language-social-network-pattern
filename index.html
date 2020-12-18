@@ -376,7 +376,7 @@
     <h2 class="section-heading text-uppercase">Language Prediction</h2>
 		
     				<p>Can we predict the culture of a user, given his/her total activity on Tweeter (without access on his/her content)?
-Let's try to solve this problem in a supervised and unspervised way using all the features analyzed in Activitness Analysis session: </p>
+Let's try to solve this problem in a supervised and unsupervised way using all the features extracted earlier: </p>
     <p>- number of followers, </p>
 		<p>- number of friend, </p>
 		<p>- number of tweets, </p>
@@ -385,10 +385,10 @@ Let's try to solve this problem in a supervised and unspervised way using all th
 		<p>- year..</p>
 
 					<h3 class="supevised-learning">Supevised Learning</h3>
-<p>In a Supervised framework we split the dataset in 2 parts: we train our model with 70% of the users and we use 30% for testing our performances. We standardize the dataset but further analysis show that a polynomial expansion don't seem to improve our prediction performances. Using Logistic Regression and Random Forest we got an accuracy on the test up to 82%.
-The 6 coefficient of the Logistic regression describe us the importance of each regressor, while the t-tests using the coefficients tell us that there is not statical evidence that some feature are useful, i.e. number of follower and friends and average daily tweets, maybe the last one because it is strong correlated with the total number of tweets published and the year of subscription.
- <h3 class="unsupevised-learning">Unsupevised Learning</h3>
-<p>An even challenging problem is to find this 2 behaviors (western and eastern) from scratch, i.e. without a training model. If we are able to cluster the users in this two subset without knowing that they exist, it would mean that they are strong and that exist from real. We applied few variant of k-means (k=2) but without almost any result. In fact, even considering different data reduction (PCA, t-SNE, 2 most representative features) to visualize the sample, it seems that there is not spatial pattern at all to split automaticaly.</p>
+<p>In a supervised framework we split the dataset in 2 parts: we train our model with 70% of the users and we use 30% for testing our performances. We standardize the dataset but further analysis show that a polynomial expansion don't seem to improve our prediction performances. Using Logistic Regression and Random Forest we got an accuracy on the test up to 82%.
+The 6 coefficients of the Logistic regression describe the importance of each regressor, while the t-tests using the coefficients tell us that there is not statistical evidence that some features are useful, i.e. number of follower and friends and average daily tweets, maybe the last one because it is strong correlated with the total number of tweets published and the year of subscription.
+ <h3 class="unsupervised-learning">Unsupervised Learning</h3>
+<p>An even more challenging problem is to classify these two cultures (western and eastern) from scratch, i.e. without a training model. If we are able to cluster the users in these two classes without knowing that they exist, it would mean that they are very strong and they exist in the real-world (outside our dataset). We applied few variant of k-means (k=2) but without almost any result. In fact, even considering different data reduction (PCA, t-SNE, 2 most representative features) to visualize the sample, it seems that there is not spatial pattern at all to split automaticaly.</p>
 
 
 	</div>
