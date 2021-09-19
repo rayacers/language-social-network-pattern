@@ -376,19 +376,19 @@
     <h2 class="section-heading text-uppercase">Language Prediction</h2>
 		
     				<p>Can we predict the culture of a user, given his/her total activity on Tweeter (without access on his/her content)?
-Let's try to solve this problem in a supervised and unspervised way using all the features analyzed in Activitness Analysis session: </p>
+Let's try to solve this problem in a supervised and unsupervised way using all the features extracted earlier: </p>
     <p>- number of followers, </p>
 		<p>- number of friend, </p>
 		<p>- number of tweets, </p>
 		<p>- Internationality, </p>
 		<p>- Average daily tweets,</p>
-		<p>- year..</p>
+		<p>- year.</p>
 
 					<h3 class="supevised-learning">Supevised Learning</h3>
-<p>In a Supervised framework we split the dataset in 2 parts: we train our model with 70% of the users and we use 30% for testing our performances. We standardize the dataset but further analysis show that a polynomial expansion don't seem to improve our prediction performances. Using Logistic Regression and Random Forest we got an accuracy on the test up to 82%.
-The 6 coefficient of the Logistic regression describe us the importance of each regressor, while the t-tests using the coefficients tell us that there is not statical evidence that some feature are useful, i.e. number of follower and friends and average daily tweets, maybe the last one because it is strong correlated with the total number of tweets published and the year of subscription.
- <h3 class="unsupevised-learning">Unsupevised Learning</h3>
-<p>An even challenging problem is to find this 2 behaviors (western and eastern) from scratch, i.e. without a training model. If we are able to cluster the users in this two subset without knowing that they exist, it would mean that they are strong and that exist from real. We applied few variant of k-means (k=2) but without almost any result. In fact, even considering different data reduction (PCA, t-SNE, 2 most representative features) to visualize the sample, it seems that there is not spatial pattern at all to split automaticaly.</p>
+<p>In a supervised framework we split the dataset in 2 parts: we train our model with 70% of the users and we use 30% for testing our performances. We standardize the dataset but further analysis show that a polynomial expansion don't seem to improve our prediction performances. Using Logistic Regression and Random Forest we got an accuracy on the test up to 82%.
+The 6 coefficients of the Logistic regression describe the importance of each regressor, while the t-tests using the coefficients tell us that there is not statistical evidence that some features are useful, i.e. number of follower and friends and average daily tweets, maybe the last one because it is strong correlated with the total number of tweets published and the year of subscription.
+ <h3 class="unsupervised-learning">Unsupervised Learning</h3>
+<p>An even more challenging problem is to classify these two cultures (western and eastern) from scratch, i.e. without a training model. If we are able to cluster the users in these two classes without knowing that they exist, it would mean that they are very strong and they exist in the real-world (outside our dataset). We applied few variant of k-means (k=2) but without almost any result. In fact, even considering different data reduction (PCA, t-SNE, 2 most representative features) to visualize the sample, it seems that there is not spatial pattern at all to split automaticaly.</p>
 
 
 	</div>
@@ -435,13 +435,12 @@ The 6 coefficient of the Logistic regression describe us the importance of each 
 	
 	 	<p> Yes, in a supervised way with an accuracy of 0.82; not at all in a unsupervised way. So what does it mean?</p>
 
-<p>IT REMEMBERS US THAT MACHINE LEARNING IS NOT MAGIC.</p>
+<p>IT REMINDS US THAT MACHINE LEARNING IS NOT MAGIC!</p>
+<p>We can't predict patterns that don't exist and, similiarly, there are patterns that can't be explained without the right data. The 6 features that we analyzed through this report explain the different cultural attitudes on Twitter, and in a certain way, allow us the infer the culture with a certain accuracy (0.82) in a supervised way training. However, all the variance is not explained and we are not at all able to solve this problem in an unsupervised way. This led us to think if these cultural differences are really significant or not.</p>
 
-<p>We can't predict patterns that don't exist and, similiarly, there are patterns that can't be explained without the right data. The 6 features that we analyzed through this report well explain the different cultural attitudes on Tweeter, and in a certain way allow us the infer the culture with a certain accuracy in a supervised way training. However, all the variance is not explained and we are not at all able to solve this problem with a unsupervised way. This let us reflect if this cultural differences are really predictable.</p>
+<p>It is interesting to point out these results because this problem is not so different from the judgments we make every day scrolling the feed on a social networks. Are we using the right (enough and representative) data to be able to profile a user? Do these personalities really reflect the reality on the test set? Maybe there are better dataset to work with. See `REAL_LIFE.csv`.</p>
 
-<p>It is intersting to point out these results, because this problem is not so different from the judgments we make every day scrolling the feed on a social network. Are we using the right (enough and representative) data and should be able to profilize each user? Do these personalities really reflect the reality on the test set? 
-Maybe there are better dataset to work with. See <b>REAL_LIFE.csv</b>.
-        	</p>
+	      </p>
 	      
 
       </div>
